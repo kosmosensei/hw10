@@ -15,4 +15,19 @@ public class Author {
     public String getLastName(){
         return lastName;
     }
+
+    public String toString() {
+        return firstName + " " + lastName;
+    }
+
+    public boolean equalsAuthor(Object other) {
+        if(this.getClass() != other.getClass()){
+            return false;
+        }
+        Author firstName2 = (Author) other;
+        return firstName.equals(firstName2.firstName);
+    }
+    public int hashCode() {
+        return  java.util.Objects.hash(lastName);
+    }
 }

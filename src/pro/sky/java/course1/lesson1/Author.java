@@ -1,4 +1,5 @@
 package pro.sky.java.course1.lesson1;
+import java.util.Objects;
 
 public class Author {
     private final String firstName;
@@ -19,15 +20,18 @@ public class Author {
     public String toString() {
         return firstName + " " + lastName;
     }
-
-    public boolean equalsAuthor(Object other) {
-        if(this.getClass() != other.getClass()){
+    @Override
+    public boolean equals(Object other) {
+        if(other == null || this.getClass() != other.getClass()){
             return false;
         }
         Author firstName2 = (Author) other;
-        return firstName.equals(firstName2.firstName);
+        return toString().equals(firstName2.toString());
     }
+
+    @Override
     public int hashCode() {
-        return  java.util.Objects.hash(lastName);
+        return  Objects.hash(firstName,lastName);
     }
+
 }

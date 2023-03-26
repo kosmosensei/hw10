@@ -1,5 +1,7 @@
 package pro.sky.java.course1.lesson1;
 
+import java.util.Objects;
+
 public class Book {
     private final String name;
     private Author author;
@@ -24,7 +26,9 @@ public class Book {
     }
 
     public String toString() {
-        return Integer.toString(publishingYear); // преобразование числа в строку.
+        return "Название кники: " + name +
+                "Автор " + author +
+                " Год публикации: " + publishingYear;
     }
 
     public boolean equalsAuthor(Object other) {
@@ -36,6 +40,8 @@ public class Book {
     }
 
     public int hashCode() {
-        return  java.util.Objects.hash(name);
+        return Objects.hash(name);
     }
+
+
 }

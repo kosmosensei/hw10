@@ -14,7 +14,7 @@ public class Main {
         Author author2 = new Author("Джон", "Рональд Руэл Толкин");
         Book book2 = new Book("Властелин колец", author2, 1954);
         book2.setPublishingYear(1955);
-        System.out.println("book2.getBookName() = " + book2.getName()); // Вывод с коментом через soutv
+        System.out.println("book2.getBookName() = " + book2.getName());
         System.out.println("author2.getName() = " + author2);
         System.out.println("book2.getPublishingYear() = " + book2.getPublishingYear());
 
@@ -23,7 +23,7 @@ public class Main {
         System.out.println(" ");
 
         System.out.println("Авторы книг один и тот же? - " + book1.equalsAuthor(book2)); // equals в методе Book
-        System.out.println("author1.equalsAuthor(author2) = " + author1.equalsAuthor(author2)); // Имя автора первой книги в стравнении с именем во второй книге. Класс Author
+        System.out.println("author1.equalsAuthor(author2) = " + author1.equals(author2)); // Имя автора первой книги в стравнении с именем во второй книге. Класс Author
 
         System.out.println(" ");
 

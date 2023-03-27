@@ -31,17 +31,16 @@ public class Book {
                 " Год публикации: " + publishingYear;
     }
 
-    public boolean equalsAuthor(Object other) {
-        if (other.getClass() != this.getClass()) {
-            return false;
-        }
-        Book name = (Book) other;
-        return author.equals(name.author);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return publishingYear == book.publishingYear && Objects.equals(name, book.name) && Objects.equals(author, book.author);
     }
 
+    @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, author, publishingYear);
     }
-
-
 }
